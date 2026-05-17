@@ -352,3 +352,5 @@ DiscordSocialSdk-*
 
 # Addon ZIP (for Asset Store)
 discord_social_sdk.zip
+
+build_*.sh
