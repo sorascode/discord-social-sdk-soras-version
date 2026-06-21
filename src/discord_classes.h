@@ -574,7 +574,7 @@ public:
 	// Constructors.
 
 	// Functions.
-	DiscordAuthorizationCodeChallenge *challenge();
+	Ref<DiscordAuthorizationCodeChallenge> challenge();
 	String verifier();
 	void set_challenge(DiscordAuthorizationCodeChallenge *challenge);
 	void set_verifier(String verifier);
@@ -613,7 +613,7 @@ public:
 	// Functions.
 	DiscordAudioModeType::Enum get_audio_mode();
 	DiscordCallStatus::Enum get_status();
-	DiscordVADThresholdSettings *get_vadthreshold();
+	Ref<DiscordVADThresholdSettings> get_vadthreshold();
 	TypedArray<int64_t> get_participants();
 	Variant get_voice_state_handle(int64_t user_id);
 	bool get_local_mute(int64_t user_id);
@@ -746,13 +746,12 @@ public:
 	}
 
 	// Functions.
-	DiscordAuthorizationCodeVerifier *create_authorization_code_verifier();
-	DiscordCall *get_call(int64_t channel_id);
-	DiscordCall *start_call(int64_t channel_id);
-	DiscordCall *start_call_with_audio_callbacks(int64_t lobby_id, Callable received_cb, Callable captured_cb);
+	Ref<DiscordAuthorizationCodeVerifier> create_authorization_code_verifier();
+	Ref<DiscordCall> get_call(int64_t channel_id);
+	Ref<DiscordCall> start_call(int64_t channel_id);
+	Ref<DiscordCall> start_call_with_audio_callbacks(int64_t lobby_id, Callable received_cb, Callable captured_cb);
 	DiscordClientStatus::Enum get_status();
-	DiscordRelationshipHandle *get_relationship_handle(int64_t user_id);
-	DiscordUserHandle *get_current_user();
+	Ref<DiscordRelationshipHandle> get_relationship_handle(int64_t user_id);
 	TypedArray<DiscordCall> get_calls();
 	TypedArray<DiscordRelationshipHandle> get_relationships();
 	TypedArray<DiscordRelationshipHandle> get_relationships_by_group(DiscordRelationshipGroupType::Enum group_type);
@@ -770,7 +769,6 @@ public:
 	bool register_launch_command(int64_t application_id, String command);
 	bool register_launch_steam_application(int64_t application_id, int64_t steam_app_id);
 	bool set_log_dir(String path, DiscordLoggingSeverity::Enum min_severity);
-	bool set_speaker_mode(bool speaker_mode);
 	bool show_audio_route_picker();
 	float get_input_volume();
 	float get_output_volume();
@@ -1433,7 +1431,7 @@ public:
 	// Constructors.
 
 	// Functions.
-	DiscordRelationshipHandle *relationship();
+	Ref<DiscordRelationshipHandle> relationship();
 	DiscordStatusType::Enum status();
 	String avatar_url(DiscordUserHandleAvatarType::Enum animated_type, DiscordUserHandleAvatarType::Enum static_type);
 	String display_name();

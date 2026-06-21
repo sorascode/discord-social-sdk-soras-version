@@ -385,13 +385,6 @@ func(device: DiscordAudioDevice)
 [/codeblock]
 </description>
 		</method>
-		<method name="get_current_user" deprecated="Please use GetCurrentUserV2 instead. This will be removed in a future version.">
-			<return type="DiscordUserHandle" />
-			<description>
-			(deprecated)
-			
-			</description>
-		</method>
 		<method name="get_current_user_v2">
 			<return type="Variant" />
 			<description>
@@ -1559,14 +1552,6 @@ func(user_id: int)
 			Sets whether chat messages are currently being shown in the game.
 			If the user has the Discord desktop application open on the same machine as the game, then they will hear notifications from the Discord application, even though they are able to see those messages in game. So to avoid double-notifying users, you can call this function whenever the chat is shown or hidden to suppress those duplicate notifications.
 Keep in mind, if the game stops showing chat for a period of time, or the game loses focus because the user switches to a different app, it is important to call this function again so that the user's notifications get re-enabled in Discord during this time.
-			</description>
-		</method>
-		<method name="set_speaker_mode" deprecated="Calling [method DiscordClient.set_speaker_mode] is DEPRECATED.">
-			<return type="bool" />
-			<param index="0" name="speaker_mode" type="bool" />
-			<description>
-			(deprecated) On mobile devices, enable speakerphone mode.
-			
 			</description>
 		</method>
 		<method name="set_status_changed_callback">

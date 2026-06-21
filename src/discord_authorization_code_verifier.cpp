@@ -5,11 +5,11 @@ using namespace godot;
 
 // Functions.
 
-DiscordAuthorizationCodeChallenge *DiscordAuthorizationCodeVerifier::challenge() {
+Ref<DiscordAuthorizationCodeChallenge> DiscordAuthorizationCodeVerifier::challenge() {
 	auto r0 = obj->Challenge();
 
 	discordpp::AuthorizationCodeChallenge *r1_t = memnew(discordpp::AuthorizationCodeChallenge(std::move(r0)));
-	DiscordAuthorizationCodeChallenge *r1 = memnew(DiscordAuthorizationCodeChallenge{ r1_t });
+	Ref<DiscordAuthorizationCodeChallenge> r1 = memnew(DiscordAuthorizationCodeChallenge{ r1_t });
 
 	return r1;
 }
